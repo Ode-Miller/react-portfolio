@@ -5,20 +5,21 @@ import project2 from './project-2.jpg';
 import project3 from './project-3.jpg';
 import project4 from './project-4.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div>
+function MyHeader(){
+  return(
+    <div>
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Ode Miller</h1>
         <h3>Software Engineer in Atlanta</h3>
         <p>{'{ pause and ponder }'}</p>
-        </div>
-        
-        <hr/>
+      </div>
 
-        <div class="about-grid">
+  );
+}
+
+function MyAbout(){
+  return(
+    <div class="about-grid">
 				<div class="i-am">
 					<h2>  I am</h2>
 					<ul class="about-list">
@@ -36,10 +37,12 @@ function App() {
 					</ul>
 				</div>
 			</div>
+  );
+}
 
-      <hr/>
-
-      <div>
+function MyProjects(){
+  return(
+    <div>
 				<h3 class="projects-heading">My Projects</h3>
 				<div class="projects-grid">
 					<div class="project-image-wrapper">
@@ -61,11 +64,53 @@ function App() {
 					</div>
 				</div>
 			</div>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+     
+        <MyHeader/>
+        
+        <hr/>
+
+        <MyAbout/>
+
+      <hr/>
+      <MyProjects/>
 
 			<hr/>
 
-      
-      </header>
+      <div class="links-grid">
+			<div class="links">
+				<h3>Links</h3>
+				<ul>
+					<li>
+						<a href="https://github.com/Ode-Miller">Github</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/ode-miller">Linkedin</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="bottom-boxes">
+				<form action="#">
+					<label for="email">
+						<h4>Email</h4>
+						 <input id="email" placeholder="Enter your email"/>
+					</label>
+					<label for="message">
+						<h4>Message</h4>
+						 <textarea id="message">Your Message</textarea>
+					</label>
+					<div class="submit-button-wrapper">
+					<input id="submit-button" type="submit" value="Send Message"/>
+					</div>
+				</form>
+			</div>
+		</div>
     </div>
   );
 }
